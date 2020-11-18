@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Sub1Movie</string>
-    <string name="title_favorite">Favorite</string>
     <string name="image">image</string>
     <string name="overview">Overview</string>
     <string name="genres">Genres</string>
