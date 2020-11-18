@@ -63,7 +63,6 @@ class FavoriteFragment : Fragment() {
             }
 
             favoriteViewModel.getAllFavorites().observe(viewLifecycleOwner , {
-                Log.d("DEBUGS FAV", it.toString())
                 if(it.isNotEmpty()){
                     tv_empty_fav.visibility = View.GONE
                     rv_fav.visibility = View.GONE

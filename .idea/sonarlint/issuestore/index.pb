@@ -73,3 +73,15 @@ J
 shared_dependencies.gradle,b\e\bea21ad436ad8008e4327b60ad9d3401a26c6abc
 A
 core/build.gradle,9\1\918ca359602392354123b7d3b63264baf7ea9dde
+Y
+)app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6
+Y
+)app/src/main/res/layout/fragment_home.xml,3\1\31c5880846ef63ff1963efbe141ddfd56680bb19
+i
+9favorite/src/main/res/layout/layout_movie_placeholder.xml,0\7\0780451969993a7edfd6861451ceaa528138612f
+ç
+]core/src/main/java/com/example/android/sub1movie/core/data/source/local/room/MovieDatabase.kt,8\2\8233e20554b877d5f6955e096f70793d01c0a444
+ü
+ocore/src/main/java/com/example/android/sub1movie/core/data/source/remote/response/detail/DetailMovieResponse.kt,d\5\d56722398688a1489dba4f1bbdd9ce8858d91e2b
+Q
+!core/src/main/AndroidManifest.xml,a\e\ae00e14a93cb05cbe86f462a3bad74d51f6b1afc
