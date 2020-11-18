@@ -11,7 +11,7 @@ buildscript {
     ext.activity_ktx_version = "1.1.0"
     ext.fragment_ktx_version = "1.2.5"
     ext.koin_version = "2.1.6"
-
+    ext.shimmer_version = "0.5.0"
     ext.multidex_version = "2.0.1"
 
     repositories {

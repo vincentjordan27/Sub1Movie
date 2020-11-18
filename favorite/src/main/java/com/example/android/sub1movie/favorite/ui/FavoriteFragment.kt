@@ -2,6 +2,8 @@ package com.example.android.sub1movie.favorite.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,6 +41,12 @@ class FavoriteFragment : Fragment() {
         injectFavorite()
     }
 
+    override fun onResume() {
+        super.onResume()
+        pg_fav.visibility = View.VISIBLE
+
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -56,15 +64,25 @@ class FavoriteFragment : Fragment() {
 
             favoriteViewModel.getAllFavorites().observe(viewLifecycleOwner , {
                 Log.d("DEBUGS FAV", it.toString())
-                pg_fav.visibility = View.GONE
                 if(it.isNotEmpty()){
-
                     tv_empty_fav.visibility = View.GONE
+                    rv_fav.visibility = View.GONE
                     movieAdapter.setData(it)
                 }else {
-                    tv_empty_fav.visibility = View.VISIBLE
+                    tv_empty_fav.visibility = View.GONE
                     rv_fav.visibility = View.GONE
                 }
+                Handler(Looper.getMainLooper()).postDelayed({
+                    pg_fav.visibility = View.GONE
+                    if (it.isNotEmpty()){
+                        tv_empty_fav.visibility = View.GONE
+                        rv_fav.visibility = View.VISIBLE
+                    }else {
+                        tv_empty_fav.visibility = View.VISIBLE
+                        rv_fav.visibility = View.GONE
+                    }
+                }, 1000)
+
             })
 
             rv_fav.apply {
