@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sub1Movie</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="image">image</string>
+    <string name="overview">Overview</string>
+    <string name="genres">Genres</string>
+    <string name="featured">Featured</string>
+    <string name="now_playing">Now Playing</string>
+</resources>
