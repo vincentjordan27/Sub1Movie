@@ -7,10 +7,10 @@ import retrofit2.http.Path
 
 interface ApiService {
 
-   @GET("now_playing?api_key=f5ed401dc9fbb006d3357deb008e8bff")
+   @GET("/3/movie/now_playing?api_key=f5ed401dc9fbb006d3357deb008e8bff")
    suspend fun getMovies() : ListMovieResponse
 
-   @GET("{id}?api_key=f5ed401dc9fbb006d3357deb008e8bff")
+   @GET("/3/movie/{id}?api_key=f5ed401dc9fbb006d3357deb008e8bff")
    suspend fun getDetailMovie(@Path("id") id : Int): DetailMovieResponse
 
 }
