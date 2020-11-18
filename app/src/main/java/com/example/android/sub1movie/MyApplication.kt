@@ -1,6 +1,5 @@
 package com.example.android.sub1movie
 
-import android.app.Application
 import androidx.multidex.MultiDexApplication
 import com.example.android.sub1movie.core.di.databaseModule
 import com.example.android.sub1movie.core.di.networkModule
