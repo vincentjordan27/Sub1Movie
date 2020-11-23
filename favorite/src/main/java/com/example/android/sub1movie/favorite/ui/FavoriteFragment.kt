@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android.sub1movie.core.domain.model.Movie
 import com.example.android.sub1movie.detail.DetailActivity
 import com.example.android.sub1movie.core.ui.MovieAdapter
 import com.example.android.sub1movie.favorite.R
@@ -25,7 +26,7 @@ class FavoriteFragment : Fragment() {
     private fun injectFavorite() = loadFavorite
 
     private val favoriteViewModel: FavoriteViewModel by viewModel()
-
+    private var movieData: ArrayList<Movie> ?= null
 
 
     override fun onCreateView(
@@ -38,12 +39,6 @@ class FavoriteFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injectFavorite()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        pg_fav.visibility = View.VISIBLE
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,19 +57,12 @@ class FavoriteFragment : Fragment() {
             }
 
             favoriteViewModel.getAllFavorites().observe(viewLifecycleOwner , {
-                if(it.isNotEmpty()){
-                    tv_empty_fav.visibility = View.GONE
-                    rv_fav.visibility = View.GONE
-                    movieAdapter.setData(it)
-                }else {
-                    tv_empty_fav.visibility = View.GONE
-                    rv_fav.visibility = View.GONE
-                }
                 Handler(Looper.getMainLooper()).postDelayed({
                     pg_fav.visibility = View.GONE
                     if (it.isNotEmpty()){
                         tv_empty_fav.visibility = View.GONE
                         rv_fav.visibility = View.VISIBLE
+                        movieAdapter.setData(it)
                     }else {
                         tv_empty_fav.visibility = View.VISIBLE
                         rv_fav.visibility = View.GONE
